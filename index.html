@@ -31,7 +31,8 @@
           </h2>
 
           <div class="input__wrapper  relative">
-            <input type="text" class="cta__input width-100 text-align text-clr-very-dark " style="--position:right;">
+            <input type="text" class="cta__input width-100 text-align text-clr-very-dark" style="--position:right;"
+              data-total-bill-input>
             <picture class="wrapper__icon absolute">
               <img src="/images/icon-dollar.svg">
             </picture>
@@ -44,24 +45,32 @@
           </h2>
 
           <div class="percent-tabs-wrapper grid" style="--gap:15px;">
-            <button class="percent__tab bg-very-dark" data-tab-percent="5">5%</button>
-            <button class="percent__tab bg-very-dark" data-tab-percent="10">10%</button>
-            <button class="percent__tab bg-very-dark" data-tab-percent="15">15%</button>
-            <button class="percent__tab bg-very-dark" data-tab-percent="20">25%</button>
-            <button class="percent__tab bg-very-dark" data-tab-percent="20">50%</button>
+            <button class="percent__tab bg-very-dark" data-tab-percent="5" data-percent-tab>5%</button>
+            <button class="percent__tab bg-very-dark" data-tab-percent="10" data-percent-tab>10%</button>
+            <button class="percent__tab bg-very-dark" data-tab-percent="15" data-percent-tab>15%</button>
+            <button class="percent__tab bg-very-dark" data-tab-percent="20" data-percent-tab>25%</button>
+            <button class="percent__tab bg-very-dark" data-tab-percent="20" data-percent-tab>50%</button>
             <input type="text" class="cta__input percent__tab text-clr-very-dark custom__input text-align"
-              placeholder="Custom" style="--position:right;">
+              placeholder="Custom" style="--position:right;" data-custom-input>
           </div>
 
         </div>
 
         <div class="wrapper bill__wrapper">
-          <h2 class="wrapper__title text-clr-dark">
-            Number of People
-          </h2>
+
+          <div class="flex flex-items-center flex-space-between">
+
+            <h2 class="wrapper__title text-clr-dark">
+              Number of People
+            </h2>
+
+            <span class="error-span" data-error-span>
+            </span>
+          </div>
 
           <div class="input__wrapper  relative">
-            <input type="text" class="cta__input width-100 text-align text-clr-very-dark " style="--position:right;">
+            <input type="text" class="cta__input width-100 text-align text-clr-very-dark " style="--position:right;"
+              data-people-no>
             <picture class="wrapper__icon absolute">
               <img src="/images/icon-person.svg">
             </picture>
@@ -70,39 +79,41 @@
 
       </div>
 
-      <div class="results__container bg-very-dark">
+      <div class="results__container bg-very-dark grid">
 
-        <div class="results__wrapper flex flex-space-between flex-items-center">
-          <div>
-            <div class="results__wrapper__title text-clr-white">
-              Tip Amount
+        <div>
+          <div class="results__wrapper flex flex-space-between flex-items-center">
+            <div>
+              <div class="results__wrapper__title text-clr-white">
+                Tip Amount
+              </div>
+
+              <span class="span text-clr-light">
+                / person
+              </span>
             </div>
-
-            <span class="span text-clr-light">
-              / person
+            <span class="per-person-tip-amount result__span text-clr-cyan" data-per-person-span>
+              $0.00
             </span>
           </div>
-          <span class="per-person-tip-amount result__span text-clr-cyan" data-per-person-span>
-            $0.00
-          </span>
-        </div>
 
-        <div class="results__wrapper flex flex-space-between flex-items-center">
-          <div>
-            <div class="results__wrapper__title text-clr-white">
-              Total
+          <div class="results__wrapper flex flex-space-between flex-items-center">
+            <div>
+              <div class="results__wrapper__title text-clr-white">
+                Total
+              </div>
+
+              <span class="span text-clr-light">
+                / person
+              </span>
             </div>
-
-            <span class="span text-clr-light">
-              / person
+            <span class="per-person-tip-amount result__span text-clr-cyan" data-total-amount-span>
+              $0.00
             </span>
           </div>
-          <span class="per-person-tip-amount result__span text-clr-cyan" data-per-person-span>
-            $0.00
-          </span>
         </div>
 
-        <div class="reset-btn bg-strong-cyan text-align text-clr-very-dark" style="--position:center;">
+        <div class="reset-btn bg-strong-cyan text-align text-clr-very-dark" style="--position:center;" data-reset-btn>
           Reset
         </div>
       </div>

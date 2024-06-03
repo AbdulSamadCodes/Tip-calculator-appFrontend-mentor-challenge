@@ -8,7 +8,7 @@
   /* spacing */
   --component-padding: 20px 16px;
   --component-margin-block-start: 30px;
-  --results-container-padding: 20px 15px;
+  --results-container-padding: 18px 15px;
   --cta-input-padding-inline: 10px;
 
   /* widths and heights */
@@ -22,6 +22,7 @@
   --clr-light-grayish-cyan: hsl(185, 41%, 84%);
   --very-light-grayish-cyan: hsl(189, 41%, 97%);
   --clr-white: hsl(0, 0%, 100%);
+  --clr-red: hsl(0, 100%, 50%);
 
   /* typography */
   --ff-space-mono: "Space Mono", monospace;
@@ -199,7 +200,6 @@ body {
 
 .wrapper__title {
   font-size: var(--fs-wrapper-title);
-  margin-block-end: 10px;
 }
 
 .cta__input {
@@ -231,10 +231,6 @@ body {
   transition: background-color 300ms ease;
 }
 
-.percent__tab:not(.custom__input):is(:hover, :focus) {
-  background-color: var(--clr-strong-cyan);
-}
-
 .custom__input,
 .custom__input::placeholder {
   color: var(--clr-very-dark-cyan);
@@ -247,6 +243,16 @@ body {
 .result__span {
   font-size: var(--fs-result-span);
   font-weight: 800;
+}
+
+.error-span {
+  color: var(--clr-red);
+  font-size: 1rem;
+}
+
+.input__wrapper,
+.percent-tabs-wrapper {
+  margin-block-start: 10px;
 }
 
 /* main styles */
@@ -296,4 +302,39 @@ body {
 
 .reset-btn:is(:hover, :focus) {
   background-color: var(--clr-light-grayish-cyan);
+}
+
+/* desktop design */
+
+@media (min-width:768px) {
+  :root {
+    --component-padding: 25px 18px;
+    --results-container-padding: 25px 15px;
+
+    --fs-result-span: 3rem;
+  }
+
+  .main-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .component-container {
+    min-width: 700px;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .reset-btn {
+    margin-block-start: auto;
+  }
+
+  .percent-tabs-wrapper {
+    grid-template-columns: repeat(auto-fit, minmax(60px, 90px));
+  }
+
+  .component__input__section {
+    --gap: 30px !important;
+  }
 }
